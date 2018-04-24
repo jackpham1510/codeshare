@@ -62,6 +62,9 @@ export default class extends React.Component{
       theme: theme || 'monokai',
     })
 
+    this.myCodeMirror.setOption('style', mode || 'Plain Text') // fix some bugs when upload to heroku
+    this.myCodeMirror.setOption('style', theme || 'monokai') // fix some bugs when upload to heroku
+
     document.getElementsByClassName('CodeMirror')[0].setAttribute('style', `
       height: ${window.innerHeight - 146}px
     `)
