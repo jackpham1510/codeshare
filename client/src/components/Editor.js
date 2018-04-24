@@ -66,8 +66,10 @@ export default class extends React.Component{
       height: ${window.innerHeight - 146}px
     `)
 
+    this.props.toggleSetting()
     this.props.handleSetting(this.myCodeMirror, 'theme', 'default') // fix some bugs when upload
     this.props.handleSetting(this.myCodeMirror, 'theme', theme || 'monokai') // fix some bugs when upload
+    //this.props.toggleSetting()
   }
 
   handleSetting = e => {    
