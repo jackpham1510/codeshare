@@ -59,15 +59,14 @@ export default class extends React.Component{
       lineNumbers: true,
       tabSize: tabSize || 2,
       mode: mode || 'Plain Text',
-      theme: theme || 'monokai',
+      theme: 'default',
     })
-
-    this.myCodeMirror.setOption('mode', mode || 'Plain Text') // fix some bugs when upload
-    this.myCodeMirror.setOption('theme', theme || 'monokai') // fix some bugs when upload
 
     document.getElementsByClassName('CodeMirror')[0].setAttribute('style', `
       height: ${window.innerHeight - 146}px
     `)
+
+    this.myCodeMirror.setOption('theme', theme || 'monokai') // fix some bugs when upload
   }
 
   handleSetting = e => {    
