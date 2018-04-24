@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: 'Lato', sans-serif;
+}
+*{
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+}
+a, a:active{
+  color: inherit;
+}
+.CodeMirror{
+  padding-top: 10px;
+}
