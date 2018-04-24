@@ -16,4 +16,14 @@ a, a:active{
 }
 .CodeMirror{
   padding-top: 10px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: calc(100% - 86px) !important;
+}
+.codeshare{
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 60px);
 }
