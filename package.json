@@ -7,10 +7,9 @@
   "author": "Pham Dung",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js",
+    "start": "node index.dev.js && cd client && npm run start",
     "dev": "nodemon index.dev.js",
-    "now-build": "cd client && yarn --production=false && yarn run build",
-    "heroku-postbuild": "cd client && yarn --production=false && yarn run build"
+    "now-build": "cd client && yarn --production=false && yarn run build"
   },
   "dependencies": {
     "codemirror": "^5.36.0",

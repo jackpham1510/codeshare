@@ -5,8 +5,8 @@ import { modes } from '../others/Langues'
 export default function* getCodeShare(action){
   try{
     yield put({ type: 'SHOW_LOADING'})
-
-    const res = yield call(fetch, '/graphql', {
+    
+    const res = yield call(fetch, `http://mycodeshare.herokuapp.com/graphql`, {
       method: 'POST',
       headers: {
         accept: 'application/json',

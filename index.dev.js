@@ -34,6 +34,8 @@ app.use('/graphql', cors(), graphqlHTTP({
   graphiql: true,
 }));
 
-app.listen(5000, function (){
-  console.log('Server is listening on port 5000')
+const port = process.env.PORT || 5000;
+
+app.listen(port, function (){
+  console.log('Server is listening on port ' + port)
 })
