@@ -1,0 +1,20 @@
+.button{
+  outline: 0;
+  padding: 0 18px;
+  height: 35px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.button:hover, .button:focus{
+  outline: 0;
+}
+.button--pink{
+  background-color: #ec3360;
+  border-color: #ec3360;
+  color: #fff;
+}
+.button--trans{
+  background-color: transparent;
+  border-color: #fff;
+  color: #fff;
+}

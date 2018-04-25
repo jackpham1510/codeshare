@@ -1,0 +1,11 @@
+.intro{
+  background-color: #30353e;
+  color: #fff;
+  position: relative;
+  flex-direction: column;
+  padding: 0 10%;
+}
+.intro__title{
+  margin-top: -100px;
+  text-align: center;
+}

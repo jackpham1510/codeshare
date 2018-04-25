@@ -1,6 +1,5 @@
 import { connect } from 'react-redux'
-import { toggleSetting, importPackage, saveCodeShare, newCodeShare } from '../actions'
-import { modes } from '../others/Langues'
+import { toggleSetting, importPackage, saveCodeShare, newCodeShare, updateCodeShare } from '../actions'
 
 import Editor from '../components/Editor'
 
@@ -15,28 +14,46 @@ const mapDispatchToProps = dispatch => ({
     dispatch(newCodeShare(key))
   },
 
-  saveCodeShare: (id, input) => dispatch(saveCodeShare(id, input)),
+  updateCodeShare: e => {
+    const type = e.target.id
+    let value = e.target.value
 
-  handleSetting: (codeMirror, type, value) => {
     switch (type){
       case 'theme':
-        dispatch(importPackage('THEME', {
-          codeMirror,
-          theme: value
-        })); break;
-
       case 'mode':
-        dispatch(importPackage('MODE', {
-          codeMirror,
-          langue: value,
-          mode: modes[value].mime || modes[value].mode
+        dispatch(importPackage(type, {
+          [type]: value
         })); break;
       
-      case 'tabsize':
-        codeMirror.setOption('tabSize', value); break;
+      
+      case 'tabSize':
+      case 'fontSize':
+        value = Number(value)
+      // eslint-disable-next-line
+      case 'content':
+        dispatch(updateCodeShare({
+          [type]: value
+        })); break;
 
       default: break;
     }
+  },
+
+  saveCodeShare: (codeShare) => {
+    let id = undefined
+    
+    if (window.location.pathname !== '/'){
+      id = window.location.pathname.slice(1)
+    }
+
+    dispatch(saveCodeShare(id, {
+      fontSize: codeShare.fontSize,
+      tabSize: codeShare.tabSize,
+      theme: codeShare.theme,
+      mode: codeShare.mode,
+      content: codeShare.content,
+      lastUpdate: codeShare.lastUpdate
+    }))
   }
 })
 

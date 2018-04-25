@@ -23,7 +23,10 @@ module.exports = {
       readFileSync(`${__dirname}/database/${id}.json`) // check if id exist
     }
 
-    const codeShare = {id, ...input}
+    const d = new Date()
+    const lastUpdate = d.toLocaleDateString() + ' ' + d.toLocaleTimeString()
+    const codeShare = {id, ...input, lastUpdate}
+
     writeFileSync(`${__dirname}/database/${id}.json`, JSON.stringify(codeShare), 'utf8')
     return codeShare
   }

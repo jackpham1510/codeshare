@@ -11,8 +11,6 @@ import App from './containers/App'
 
 import registerServiceWorker from './registerServiceWorker'
 
-import './styles/index.css'
-
 const sagaMidlleWare = createSagaMiddleware()
 
 const store = createStore(rootReducer, applyMiddleware(sagaMidlleWare))

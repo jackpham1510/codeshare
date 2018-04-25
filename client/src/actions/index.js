@@ -6,8 +6,12 @@ export function newCodeShare(key){
   return { type: 'NEW_CODESHARE', key }
 }
 
-export function importPackage(kind, option){
-  return { type: 'IMPORT_PACKAGE', kind, option}
+export function importPackage(kind, value){
+  return { type: 'IMPORT_PACKAGE', kind, value}
+}
+
+export function updateCodeShare(value){
+  return { type: 'UPDATE_CODESHARE', value }
 }
 
 export function saveCodeShare(id, input){

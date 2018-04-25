@@ -1,0 +1,28 @@
+.setting{
+  padding: 0 20px;
+  background-color: #30353e;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.setting__item{
+  margin-right: 15px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.setting__item-title, .setting__select{
+  font-size: 14px;
+}
+.setting__select{
+  width: 200px;
+  margin-top: 10px;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+@media screen and (max-width: 880px){
+  .setting{
+    flex-direction: column;
+  }
+  .setting__select{
+    width: 100%;
+  }
+}

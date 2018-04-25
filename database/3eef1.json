@@ -1,0 +1,1 @@
+{"id":"3eef1","fontSize":13,"tabSize":2,"theme":"monokai","mode":"C/C++","content":"#include <iostream>\nusing namespace std;\n\nint main(){\n  cout << \"Code from new editor!\" << endl\n  return 0;\n}","lastUpdate":"2018-4-25 11:33:26"}

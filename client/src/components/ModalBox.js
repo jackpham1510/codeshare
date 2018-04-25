@@ -5,6 +5,8 @@ import Button from './Button'
 import failLogo from '../img/confused.svg'
 import successLogo from '../img/cool.svg'
 
+import '../styles/ModalBox.css'
+
 export default ({ message, success, closeModalBox }) => (
   <div className="modalbox" style={{ display: message ? 'flex' : 'none' }}>
     <div className="modalbox__icon"><img src={success ? successLogo : failLogo} alt="icon"/></div>

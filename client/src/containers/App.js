@@ -8,7 +8,7 @@ const mapStateToProps = ({ Editor, errMsg, codeShare }) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  importEditor: () => dispatch(importPackage('EDITOR')),
+  importEditor: () => dispatch(importPackage('editor')),
   getCodeShare: (id) => dispatch(getCodeShare(id))
 })
 

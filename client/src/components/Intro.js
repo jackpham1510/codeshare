@@ -2,6 +2,8 @@ import React from 'react'
 
 import Button from './Button'
 
+import '../styles/Intro.css'
+
 const buttonStyles = {
   zIndex: 10,
   height: '40px',

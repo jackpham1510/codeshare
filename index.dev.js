@@ -14,7 +14,7 @@ const root = {
     try{      
       return JSON.parse(fs.readFileSync(`${__dirname}/database/${id}.json`))
     } catch(e){
-      throw new Error('There is nothing to show :(')
+      throw new Error('There is nothing to show!')
     }
   },
   saveCodeShare({ id, input }){
@@ -33,6 +33,10 @@ app.use('/graphql', cors(), graphqlHTTP({
   rootValue: root,
   graphiql: true,
 }));
+
+app.get('/hello', function (req, res){
+  return res.end('hello')
+})
 
 const port = process.env.PORT || 5000;
 

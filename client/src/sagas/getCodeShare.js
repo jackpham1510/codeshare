@@ -1,6 +1,8 @@
 import { put, call } from 'redux-saga/effects'
 import { importPackage } from '../actions'
-import { modes } from '../others/Langues'
+// eslint-disable-next-line
+import brace from 'brace'
+import modes from '../others/Modes'
 
 export default function* getCodeShare(action){
   try{
@@ -15,7 +17,7 @@ export default function* getCodeShare(action){
       body: JSON.stringify({
         query: `query GetCodeShare($id: ID){
           getCodeShare(id: $id){
-            id, tabSize, theme, mode, langue, content, lastUpdate
+            id, fontSize, tabSize, theme, mode, content, lastUpdate
           }
         }`,
         variables: {
@@ -29,23 +31,22 @@ export default function* getCodeShare(action){
     if (errors){
       yield put({ type: 'GET_CODESHARE_FAILED', message: errors[0].message })
     } else {
+      const { mode, theme } = data.getCodeShare
+      const fileName = modes[mode]
+      console.log(fileName, theme)
+
+      yield import(`brace/theme/${theme}`)
+      console.log(1)
+      yield import(`brace/mode/${fileName}`)
+      console.log(2)
+
+      yield put(importPackage('editor'))
       yield put({ type: 'GET_CODESHARE_SUCCEED', codeShare: data.getCodeShare })
-      const { langue, theme } = data.getCodeShare
-      
-      if (langue !== 'Plain Text'){
-        const fileName = modes[langue].mode
-        yield import(`codemirror/mode/${fileName}/${fileName}.js`)
-      }
-      
-      if (theme !== 'default'){
-        yield import(`codemirror/theme/${theme}.css`)
-      }
-      
-      yield put(importPackage('EDITOR'))
     }
 
     yield put({ type: 'HIDE_LOADING' })
   } catch(e) {
+    console.log(e)
     yield put({ type: 'HIDE_LOADING' })
     yield put({ type: 'GET_CODESHARE_FAILED', message: 'Something went wrong :(' })
   }

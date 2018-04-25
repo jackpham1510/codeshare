@@ -1,0 +1,17 @@
+.loading{
+  position: absolute;
+  top: 59px;
+  height: 2px;
+  background: #ec3360;
+  z-index: 1;
+}
+.loading--animate{
+  animation-name: Loading;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+@keyframes Loading{
+  from { left: -15%; width: 15% }
+  to { left: 100%; width: 50% }
+}

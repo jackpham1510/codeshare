@@ -39,7 +39,7 @@ export default function* saveCodeShare(action){
         message: 'Save succeed! Now you can copy current link to share your code', 
       })
       yield put({
-        type: 'NEW_UPDATE',
+        type: 'NEW_SAVE',
         lastUpdate: data.saveCodeShare.lastUpdate
       })
     }

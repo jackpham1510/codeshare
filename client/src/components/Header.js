@@ -2,6 +2,8 @@ import React from 'react'
 
 import Button from './Button'
 
+import '../styles/Header.css'
+
 export default () => (
   <header className="header block--rel">
     <span className="header__title">CodeShare</span>
