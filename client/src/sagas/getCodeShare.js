@@ -33,12 +33,10 @@ export default function* getCodeShare(action){
     } else {
       const { mode, theme } = data.getCodeShare
       const fileName = modes[mode]
-      console.log(fileName, theme)
 
       yield import(`brace/theme/${theme}`)
-      console.log(1)
+
       yield import(`brace/mode/${fileName}`)
-      console.log(2)
 
       yield put(importPackage('editor'))
       yield put({ type: 'GET_CODESHARE_SUCCEED', codeShare: data.getCodeShare })

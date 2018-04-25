@@ -29,7 +29,7 @@ export default ({ setting, toggleSetting, newCodeShare, updateCodeShare, saveCod
         <Button onClick={() => saveCodeShare(codeShare)}>Save</Button>
         <Button onClick={newCodeShare}>New</Button>
       </Menu>
-      <p className="codeshare__status">Last Update: <span style={{ marginLeft: '5px' }}>{lastUpdate}</span></p>
+      <p className="codeshare__status">Last Update: <span style={{ marginLeft: '5px' }}>{lastUpdate} (GMT)</span></p>
       <Setting setting={setting}>
         <SettingItem id="fontSize" title="Font size:" list={[13,14,15,16,17,18,19,20]} defaultValue={fontSize} handleChange={updateCodeShare}/>
         <SettingItem id="tabSize" title="Tab size:" list={[2,3,4,5,6,7,8]} defaultValue={tabSize} handleChange={updateCodeShare}/>
