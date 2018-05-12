@@ -5,6 +5,9 @@ import loading from './loading'
 import modalBox from './modalBox'
 import codeShare from './codeShare'
 import errMsg from './errMsg'
+import listCodeShare from './listCodeShare'
+import List from './List'
+import page from './page'
 
 export default combineReducers({
   setting,
@@ -12,5 +15,8 @@ export default combineReducers({
   loading,
   modalBox,
   codeShare,
-  errMsg
+  errMsg,
+  listCodeShare,
+  List,
+  page
 })

@@ -13,17 +13,22 @@ export default class extends React.Component{
   constructor(props){
     super(props)
     if (window.location.pathname !== '/'){
-      props.getCodeShare(window.location.pathname.slice(1))
+      if (window.location.pathname === '/list'){
+        props.getListCodeShare()
+      } else {
+        props.getCodeShare(window.location.pathname.slice(1))
+      }
     }
   }
   render(){
-    const { Editor, importEditor, errMsg, keyEditor } = this.props
+    const { Editor, List, importEditor, errMsg, keyEditor } = this.props
     return (
       <div className="app">
         <Header></Header>
         <Loading></Loading>
         {(function (){
           if (errMsg) return <Error message={errMsg}></Error>
+          if (List !== null && window.location.pathname === '/list') return <List></List>
           if (Editor !== null) return <Editor key={keyEditor}></Editor>
           return <Intro onClick={importEditor}></Intro>
         })()}

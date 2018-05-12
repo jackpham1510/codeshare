@@ -20,8 +20,14 @@ module.exports = buildSchema(`
     lastUpdate: String
   }
 
+  type ListCodeShare{
+    total: Int,
+    list: [CodeShare]
+  }
+
   type Query{
-    getCodeShare(id: ID): CodeShare
+    getCodeShare(id: ID): CodeShare,
+    getListCodeShare(page: Int): ListCodeShare
   }
 
   type Mutation{

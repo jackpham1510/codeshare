@@ -22,6 +22,14 @@ export function getCodeShare(id){
   return { type: 'GET_CODESHARE', id }
 }
 
+export function getListCodeShare(page){
+  return { type: 'GET_LIST_CODESHARE', page }
+}
+
 export function closeModalBox(){
   return { type: 'CLOSE_MODALBOX' }
+}
+
+export function changePage(page){
+  return { type: 'CHANGE_PAGE', page }
 }

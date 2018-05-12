@@ -7,11 +7,16 @@ export default function* importPackage(action){
     yield put({ type: 'SHOW_LOADING'})
     
     const { theme, mode } = action.value || {}
+    let m = null
 
     switch (action.kind){
       case 'editor': 
-        const m = yield import('../containers/Editor');
+        m = yield import('../containers/Editor');
         yield put({ type: 'IMPORT_EDITOR_SUCCEED', Editor: m.default }); break;
+      
+      case 'list':
+        m = yield import('../containers/List');
+        yield put({ type: 'IMPORT_LIST_SUCCEED',  List: m.default }); break;
 
       case 'mode':
         const fileName = modes[mode]

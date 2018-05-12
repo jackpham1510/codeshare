@@ -19,8 +19,10 @@ module.exports = {
     return id
   },
   saveCodeShareToDB(id, input, newID){
-    if (!newID){
-      readFileSync(`${__dirname}/database/${id}.json`) // check if id exist
+    if (newID){
+      let list = JSON.parse(readFileSync(`${__dirname}/database/list.json`))
+      list.push(id)
+      writeFileSync(`${__dirname}/database/list.json`, JSON.stringify(list), 'utf8')
     }
 
     const d = new Date()

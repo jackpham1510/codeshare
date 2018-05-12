@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.dev.js",
+    "dev": "nodemon index.js",
     "now-build": "cd client && yarn --production=false && yarn run build",
     "heroku-postbuild": "cd client && yarn --production=false && yarn run build"
   },

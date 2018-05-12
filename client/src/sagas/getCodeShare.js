@@ -38,8 +38,8 @@ export default function* getCodeShare(action){
 
       yield import(`brace/mode/${fileName}`)
 
-      yield put(importPackage('editor'))
       yield put({ type: 'GET_CODESHARE_SUCCEED', codeShare: data.getCodeShare })
+      yield put(importPackage('editor'))
     }
 
     yield put({ type: 'HIDE_LOADING' })

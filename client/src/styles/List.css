@@ -1,0 +1,61 @@
+.admin{
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 20px;
+}
+.admin_title{
+  color: #ec3360;
+  margin: 20px 0;
+}
+.admin_title-center{
+  text-align: center;
+}
+.admin_status{
+  font-size: 18px;
+  font-style: italic;
+}
+.table{
+  width: 100%;
+  color: #30353e;
+}
+.table a{
+  color: blue;
+  text-decoration: underline;
+}
+.table_row td{
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+.table_header td{
+  background: #30353e;
+  border: 0;
+  color: #fff;
+}
+.table_no{
+  width: 70px;
+}
+.table_link{
+  width: 100px;
+}
+.table_lang{
+  width: 150px;
+}
+.table_update{
+ width: 220px; 
+}
+.table_body .table_button{
+  text-align: center;
+}
+.pagination{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.pagination_item{
+  background-color: #30353e;
+  color: #fff;
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 5px 1px;
+  cursor: pointer;
+}
